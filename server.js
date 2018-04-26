@@ -23,9 +23,9 @@ app.use((req, res, next) => {
 });
 
 //MAINTENANCE PAGE. LOADS THIS PAGE AND STOP EVERYTHING ELSE
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 //FUNCTION
 hbs.registerHelper('getCurrentYear', () => {
@@ -53,6 +53,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page'
   });
 });
 
